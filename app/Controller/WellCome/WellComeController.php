@@ -4,17 +4,22 @@ declare(strict_types=1);
 
 namespace App\Controller\WellCome;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/test")
- * Class WellCome
- * @package app\Controller\WellCome
- */
-class WellComeController
+class WellComeController extends AbstractController
 {
-    public function wellcomeAction()
+    /**
+     * @Route("/", name="homepage", stateless=true)
+     * @return Response
+     */
+    public function wellcome()
     {
-        echo '<h1>HELLO</h1>';
+        return $this->render(
+            'test.html.twig',
+            [
+                'status' => 1
+            ]);
     }
 }
