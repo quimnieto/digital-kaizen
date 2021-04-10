@@ -107,6 +107,8 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
     </include_path>
   </component>
   <component name="ProjectId" id="1qy7trxdgnOOZlEBmTLG3wEbfBZ" />
@@ -139,7 +141,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618040193831</updated>
-      <workItem from="1618040194874" duration="7754000" />
+      <workItem from="1618040194874" duration="10462000" />
     </task>
     <servers />
   </component>
