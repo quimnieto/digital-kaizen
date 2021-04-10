@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: build/nginx/Dockerfile
+    volumes:
+      - ./:/var/www/digitalKaizen/
+    ports:
+      - 8001:80
+    networks:
+      - symfony
+  php:
+    build:
+      context: .
+      dockerfile: build/php/Dockerfile
+    environment:
+      APP_ENV: dev
+    volumes:
+      - ./:/var/www/digitalKaizen/
+    networks:
+      - symfony
+
+networks:
+  symfony:
