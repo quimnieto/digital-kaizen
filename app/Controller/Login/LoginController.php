@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace App\Controller\WellCome;
+namespace App\Controller\Login;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class WellComeController extends AbstractController
+class LoginController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage", stateless=true)
+     * @Route("/login", name="login", stateless=true)
      * @return Response
      */
-    public function wellcome()
+    public function loginForm()
     {
         return $this->render(
-            'test.html.twig',
+            'Login\login.html.twig',
             [
                 'status' => 1
             ]);

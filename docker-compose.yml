@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: build/nginx/Dockerfile
+    container_name: kaizenNGINX
     volumes:
       - ./:/var/www/digitalKaizen/
     ports:
@@ -15,10 +16,32 @@ services:
     build:
       context: .
       dockerfile: build/php/Dockerfile
+    container_name: kaizenPHP
     environment:
       APP_ENV: dev
     volumes:
       - ./:/var/www/digitalKaizen/
+    networks:
+      - symfony
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7.22
+    container_name: kaizenDB
+    restart: unless-stopped
+    tty: true
+    environment:
+      MYSQL_DATABASE: kaizenDB
+      MYSQL_USER: cboslinked
+      MYSQL_PASSWORD: direla
+      MYSQL_ROOT_PASSWORD: direla
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - ./mysql:/var/lib/mysql
     networks:
       - symfony
 
